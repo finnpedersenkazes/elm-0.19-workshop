@@ -570,8 +570,7 @@ toTagList tagString =
 
        List.filter (\str -> str == "foo") listOfStrings
     -}
-    String.split " " tagString
-        |> List.map String.trim
+    String.words tagString
 
 
 edit : Slug -> TrimmedForm -> Cred -> Http.Request (Article Full)

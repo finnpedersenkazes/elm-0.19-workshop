@@ -40,12 +40,20 @@ src (Avatar maybeUrl) =
 
 resolveAvatarUrl : Maybe String -> String
 resolveAvatarUrl maybeUrl =
-    {- 👉 TODO #1 of 2: return the user's avatar from maybeUrl, if maybeUrl actually
-       contains one. If maybeUrl is Nothing, return this URL instead:
+    case maybeUrl of
+        Just url ->
+            url
 
-          https://static.productionready.io/images/smiley-cyrus.jpg
-    -}
-    ""
+        Nothing ->
+            "https://static.productionready.io/images/smiley-cyrus.jpg"
+
+
+
+{- 👉 TODO #1 of 2: return the user's avatar from maybeUrl, if maybeUrl actually
+   contains one. If maybeUrl is Nothing, return this URL instead:
+
+      https://static.productionready.io/images/smiley-cyrus.jpg
+-}
 
 
 encode : Avatar -> Value
